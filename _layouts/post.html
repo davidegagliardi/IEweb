@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<!-- Page Header -->
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+  {% else %}
+  <header class="masthead">
+    {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <h2 class="subheading">{{ page.subtitle }}</h2>
+            {% endif %}
+            <span class="meta">Posted by
+              <a href="#">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a>
+              on {{ page.date | date: '%B %d, %Y' }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        {{ content }}
+
+        {% if page.youtubeId %}
+        <section id="video">
+          {% include youtubePlayer.html id=page.youtubeId %}
+        </section>
+        {% endif %}
+        <p>You can find available resources here:</p>
+        <div class="row">
+          {% if page.notes %}
+            <div class="col-sm text-center">
+                {% include getNote.html id=page.notes %}
+            </div>
+          {% endif %}
+          {% if page.presentation %}
+            <div class="col-sm text-center">
+                {% include getPresentation.html id=page.presentation %}
+            </div>
+          {% endif %}
+          {% if page.reading %}
+            <div class="col-sm text-center">
+                {% include getReading.html id=page.reading %}
+            </div>
+          {% endif %}
+          {% if page.photos %}
+            <div class="col-sm text-center">
+                {% include getPhotos.html id=page.photos %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>

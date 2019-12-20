@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+  {% else %}
+  <header class="masthead">
+    {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>{{ site.title }}</h1>
+            {% if site.description %}
+            <span class="subheading">{{ site.description }}</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <p>In this website you can find all the updates from the Innovation and Entrepreneurship Basics 2019 course. This website will be updated day by day by our keepers.</p>
+    <p>Here an overview on the site structure:
+      <ul>
+        <li><strong>Exam mode</strong>: some info about the exam for both attending and non-attending students</li>
+        <li><strong>Lectures</strong>: Video, Photos, Notes, Presentations and Readings related to the lectures</li>
+        <li><strong>Battles</strong>: Video, Photos, Notes, Presentations and Reports related to Battles</li>
+        <li><strong>FAQ</strong>: FAQ for the exam preparation</li>
+      </ul>
+    </p>
+  </div>

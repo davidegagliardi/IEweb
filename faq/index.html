@@ -1,0 +1,17 @@
+---
+layout: page
+title: FAQ
+presentation: https://drive.google.com/file/d/1aNWeYxMWjkkgcZQnR6vfhe8_QqyNT287/view?usp=sharing
+youtubeId: HW2XpvBxyLg
+background: '/img/bg-about.jpg'
+---
+<div class="container">
+{% if page.youtubeId %}
+<section id="video">
+  {% include youtubePlayer.html id=page.youtubeId %}
+</section>
+{% endif %}
+{% if page.presentation %}
+  {% include getPresentation.html id=page.presentation %}
+{% endif %}
+</div>

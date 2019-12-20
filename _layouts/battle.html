@@ -1,0 +1,87 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+  {% else %}
+  <header class="masthead">
+    {% endif %}
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <h2 class="subheading">{{ page.subtitle }}</h2>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        {{ content }}
+
+        {% if page.youtubeId %}
+        <section id="video">
+          {% include youtubePlayer.html id=page.youtubeId %}
+        </section>
+        {% endif %}
+        <p>You can find available resources here:</p>
+        <div class="row">
+          {% if page.notes %}
+            <div class="col-sm text-center">
+                {% include getNote.html id=page.notes %}
+            </div>
+          {% endif %}
+          {% if page.groupA %}
+            <div class="col-sm text-center">
+                {% include getA.html id=page.groupA %}
+            </div>
+          {% endif %}
+          {% if page.groupB %}
+            <div class="col-sm text-center">
+                {% include getB.html id=page.groupB %}
+            </div>
+          {% endif %}
+          {% if page.report %}
+            <div class="col-sm text-center">
+                {% include getReport.html id=page.report %}
+            </div>
+          {% endif %}
+          {% if page.photos %}
+            <div class="col-sm text-center">
+                {% include getPhotos.html id=page.photos %}
+            </div>
+          {% endif %}
+          {% if page.presentation %}
+            <div class="col-sm text-center">
+                {% include getPresentation.html id=page.presentation %}
+            </div>
+          {% endif %}
+        </div>
+
+
+        <div class="clearfix">
+
+          {% if page.previous.url %}
+          <a class="btn btn-primary float-left" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.previous.title }}">&larr; Previous<span class="d-none d-md-inline">
+              Post</span></a>
+          {% endif %}
+          {% if page.next.url %}
+          <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">Next<span class="d-none d-md-inline">
+              Post</span> &rarr;</a>
+          {% endif %}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
