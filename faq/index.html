@@ -2,6 +2,7 @@
 layout: page
 title: FAQ
 presentation: https://drive.google.com/file/d/1aNWeYxMWjkkgcZQnR6vfhe8_QqyNT287/view?usp=sharing
+notes: https://zanna-37.github.io/I-E_Basis_2019/faq.html
 youtubeId: HW2XpvBxyLg
 background: '/img/bg-about.jpg'
 ---
@@ -11,7 +12,27 @@ background: '/img/bg-about.jpg'
   {% include youtubePlayer.html id=page.youtubeId %}
 </section>
 {% endif %}
-{% if page.presentation %}
-  {% include getPresentation.html id=page.presentation %}
-{% endif %}
+<p>You can find available resources here:</p>
+<div class="row">
+  {% if page.notes %}
+    <div class="col-sm text-center">
+        {% include getNote.html id=page.notes %}
+    </div>
+  {% endif %}
+  {% if page.presentation %}
+    <div class="col-sm text-center">
+        {% include getPresentation.html id=page.presentation %}
+    </div>
+  {% endif %}
+  {% if page.reading %}
+    <div class="col-sm text-center">
+        {% include getReading.html id=page.reading %}
+    </div>
+  {% endif %}
+  {% if page.photos %}
+    <div class="col-sm text-center">
+        {% include getPhotos.html id=page.photos %}
+    </div>
+  {% endif %}
+</div>
 </div>
